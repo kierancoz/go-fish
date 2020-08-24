@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "StateController.h"
+#include "StateHistory.h"
 using namespace Events;
 
 class EventController
@@ -8,7 +8,7 @@ class EventController
 public:
 	EventController() 
 	{
-		stateController = new StateController();
+		stateHistory = new StateHistory();
 	};
 
 	~EventController() {};
@@ -17,8 +17,10 @@ public:
 	void addObservorToStateInfo(StateInfo* info, IObservor* observor);
 
 private:
+	// Change to map for efficiency later
 	std::vector<StateEvent*> subjects;
+
 	StateEvent* getEvent(const StateInfo* info);
 	StateEvent* addNewEvent(StateInfo* info);
-	StateController* stateController;
+	StateHistory* stateHistory;
 };

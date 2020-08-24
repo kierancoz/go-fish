@@ -4,11 +4,11 @@
 
 namespace Events
 {
-	class StateController
+	class StateHistory
 	{
 	public:
-		StateController() {};
-		~StateController() {};
+		StateHistory() {};
+		~StateHistory() {};
 
 		void addChange(StateInfo* changeInfo)
 		{

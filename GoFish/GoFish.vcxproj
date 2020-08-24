@@ -146,20 +146,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DataModel.cpp" />
     <ClCompile Include="EventController.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="FeatureFactory.h" />
+    <ClCompile Include="FeatureFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.h" />
     <ClInclude Include="DataModel.h" />
-    <ClInclude Include="Feature.h" />
+    <ClInclude Include="IFeature.h" />
+    <ClInclude Include="StateInfo.h" />
     <ClInclude Include="Observor.h" />
     <ClInclude Include="StateEvent.h" />
     <ClInclude Include="IActions.h" />
     <ClInclude Include="EventController.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="StateController.h" />
+    <ClInclude Include="StateHistory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

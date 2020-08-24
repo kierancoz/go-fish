@@ -19,6 +19,9 @@
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{a15a66ca-61b7-4284-afd8-9e77777c3cc2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\EventController">
+      <UniqueIdentifier>{f7db692c-1ebf-4bf7-874c-61c3f84d955c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,7 +30,10 @@
     <ClCompile Include="EventController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataModel.cpp">
+    <ClCompile Include="FeatureFactory.h">
+      <Filter>Header Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,23 +47,26 @@
     <ClInclude Include="Card.h">
       <Filter>Header Files\DataModel</Filter>
     </ClInclude>
-    <ClInclude Include="EventController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StateController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IActions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StateEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Observor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Feature.h">
+    <ClInclude Include="StateEvent.h">
+      <Filter>Header Files\EventController</Filter>
+    </ClInclude>
+    <ClInclude Include="EventController.h">
+      <Filter>Header Files\EventController</Filter>
+    </ClInclude>
+    <ClInclude Include="StateInfo.h">
+      <Filter>Header Files\EventController</Filter>
+    </ClInclude>
+    <ClInclude Include="IFeature.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="StateHistory.h">
+      <Filter>Header Files\EventController</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

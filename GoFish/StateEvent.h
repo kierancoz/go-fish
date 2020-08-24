@@ -8,16 +8,16 @@ namespace Events
 	{
 	public:
 		~StateEvent() {};
-		StateEvent(StateInfo info)
+		StateEvent(StateInfo *info)
 		{
 			stateInfo = info;
 		}
 		StateEvent(DMPropertyType type, int index = 0)
 		{
-			stateInfo.propertyType = type;
-			stateInfo.optionalListIndex = index;
+			stateInfo->propertyType = type;
+			stateInfo->optionalListIndex = index;
 		};
 
-		StateInfo stateInfo;
+		StateInfo *stateInfo;
 	};
 }
