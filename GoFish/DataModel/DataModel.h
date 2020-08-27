@@ -21,8 +21,8 @@ public:
 		deckType = matchType;
 	}
 	~DataModel() {};
-	std::vector<Player> players;
-	std::vector<Card> deck;
+	std::vector<Player*> players;
+	std::vector<Card*> deck;
 	MatchType deckType;
 	GameState state;
 };

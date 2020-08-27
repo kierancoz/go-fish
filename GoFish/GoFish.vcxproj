@@ -94,6 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)UI;$(ProjectDir)Interfaces;$(ProjectDir)EventController;$(ProjectDir)DataModel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,6 +110,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)UI;$(ProjectDir)Interfaces;$(ProjectDir)EventController;$(ProjectDir)DataModel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,22 +148,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EventController.cpp" />
+    <ClCompile Include="EventController\EventController.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="FeatureFactory.h" />
-    <ClCompile Include="FeatureFactory.cpp" />
+    <ClCompile Include="UI\UIController.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Card.h" />
-    <ClInclude Include="DataModel.h" />
-    <ClInclude Include="IFeature.h" />
-    <ClInclude Include="StateInfo.h" />
-    <ClInclude Include="Observor.h" />
-    <ClInclude Include="StateEvent.h" />
-    <ClInclude Include="IActions.h" />
-    <ClInclude Include="EventController.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="StateHistory.h" />
+    <ClInclude Include="DataModel\Card.h" />
+    <ClInclude Include="DataModel\DataModel.h" />
+    <ClInclude Include="DataModel\Player.h" />
+    <ClInclude Include="EventController\EventController.h" />
+    <ClInclude Include="EventController\StateEvent.h" />
+    <ClInclude Include="EventController\StateHistory.h" />
+    <ClInclude Include="EventController\StateInfo.h" />
+    <ClInclude Include="Interfaces\IActions.h" />
+    <ClInclude Include="Interfaces\IFeature.h" />
+    <ClInclude Include="Interfaces\Observor.h" />
+    <ClInclude Include="UI\FeatureFactory.h" />
+    <ClInclude Include="UI\UIController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

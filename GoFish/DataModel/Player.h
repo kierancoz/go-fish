@@ -6,11 +6,11 @@ class Player
 {
 public:
 	Player() {}
-	Player(std::vector<Card> startingHand)
+	Player(std::vector<Card*> startingHand)
 	{
 		hand = startingHand;
 	}
 	~Player() {};
-	std::vector<Card> hand;
-	std::vector<std::vector<Card>> sets;
+	std::vector<Card*> hand;
+	std::vector<std::vector<Card*>*> sets;
 };

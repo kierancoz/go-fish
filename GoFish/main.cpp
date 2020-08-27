@@ -2,10 +2,21 @@
 //
 
 #include <iostream>
+#include "EventController.h"
+#include "UIController.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+
+    // Create EventController and UIController
+    EventController* eventController = new EventController();
+    UIController* uiController = new UIController();
+
+    // Subscribe UI to events
+    uiController->subscribeToEvents(eventController);
+
+    std::cout << "Goodbye World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
