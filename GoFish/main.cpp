@@ -4,6 +4,7 @@
 #include <iostream>
 #include "EventController.h"
 #include "UIController.h"
+#include "DataModelManager.h"
 
 int main()
 {
@@ -11,10 +12,12 @@ int main()
 
     // Create EventController and UIController
     EventController* eventController = new EventController();
-    UIController* uiController = new UIController();
 
-    // Subscribe UI to events
-    uiController->subscribeToEvents(eventController);
+    // DataModelManager fires events for pickup by UI
+    DataModelManager* dataModelManager = new DataModelManager(eventController);
+
+    // UI Depends on Events fired from DataModelManager
+    UIController* uiController = new UIController(eventController);
 
     std::cout << "Goodbye World!\n";
 }

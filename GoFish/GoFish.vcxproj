@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="EventController\EventController.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="DataModelManager.cpp" />
     <ClCompile Include="UI\UIController.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +160,8 @@
     <ClInclude Include="EventController\EventController.h" />
     <ClInclude Include="EventController\StateEvent.h" />
     <ClInclude Include="EventController\StateHistory.h" />
-    <ClInclude Include="EventController\StateInfo.h" />
+    <ClInclude Include="DataModelManager.h" />
+    <ClInclude Include="Set.h" />
     <ClInclude Include="Interfaces\IActions.h" />
     <ClInclude Include="Interfaces\IFeature.h" />
     <ClInclude Include="Interfaces\Observor.h" />

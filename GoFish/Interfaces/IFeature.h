@@ -6,6 +6,6 @@ class IFeature : public IObservor
 {
 public:
 	virtual ~IFeature() {};
-	virtual void Update() {};
-	virtual std::list<StateInfo*> Subscriptions() {};
+	virtual void Update() = 0;
+	virtual std::list<StateInfo*> Subscriptions() = 0;
 };

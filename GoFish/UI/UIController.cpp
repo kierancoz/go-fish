@@ -2,17 +2,20 @@
 #include "UIController.h"
 #include "FeatureFactory.h"
 
-UIController::UIController()
+UIController::UIController(EventController *controller)
 {
-	FeatureFactory::createFeatures(&features);
+	eventController = controller;
+	features = new std::vector<IFeature*>();
+	FeatureFactory::createFeatures(features);
+	subscribeToEvents();
 }
 
-void UIController::subscribeToEvents(EventController* events)
+void UIController::subscribeToEvents()
 {
-	for (auto const feature : features) {
+	for (auto const feature : *features) {
 		for (auto const& sub : feature->Subscriptions())
 		{
-			events->addObservorToStateInfo(sub, feature);
+			eventController->addObservorToStateInfo(sub, feature);
 		}
 	}
 }

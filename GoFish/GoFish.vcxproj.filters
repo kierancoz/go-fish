@@ -36,6 +36,9 @@
     <ClCompile Include="UI\UIController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DataModelManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataModel\Card.h">
@@ -56,9 +59,6 @@
     <ClInclude Include="EventController\StateHistory.h">
       <Filter>Header Files\EventController</Filter>
     </ClInclude>
-    <ClInclude Include="EventController\StateInfo.h">
-      <Filter>Header Files\EventController</Filter>
-    </ClInclude>
     <ClInclude Include="Interfaces\IActions.h">
       <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
@@ -73,6 +73,12 @@
     </ClInclude>
     <ClInclude Include="UI\UIController.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="DataModelManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Set.h">
+      <Filter>Header Files\DataModel</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

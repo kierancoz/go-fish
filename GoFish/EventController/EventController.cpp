@@ -8,7 +8,7 @@ void EventController::fireObservorUpdate(StateInfo *info)
 		event = addNewEvent(info);
 
 	event->Notify();
-	stateHistory->addChange(info);
+	stateHistory.addChange(info);
 }
 
 void EventController::addObservorToStateInfo(StateInfo* info, IObservor* observor)
@@ -24,8 +24,7 @@ void EventController::addObservorToStateInfo(StateInfo* info, IObservor* observo
 StateEvent* EventController::getEvent(const StateInfo* info)
 {
 	auto event = std::find_if(subjects.begin(), subjects.end(), [&info](const StateEvent* f)->bool
-		{ return (f->stateInfo->optionalListIndex == info->optionalListIndex &&
-		f->stateInfo->propertyType == info->propertyType); });
+		{ return (*f->optionalListIndex == *info->optionalListIndex && *f->propertyType == *info->propertyType); });
 
 	if (event == subjects.end())
 		return nullptr;

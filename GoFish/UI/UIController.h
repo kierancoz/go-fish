@@ -5,10 +5,11 @@
 class UIController
 {
 public:
-	UIController();
+	UIController(EventController *controller);
 	~UIController() {};
-	void subscribeToEvents(EventController* events);
 
 private:
-	std::vector<IFeature*> features;
+	std::vector<IFeature*> *features;
+	EventController* eventController;
+	void subscribeToEvents();
 };

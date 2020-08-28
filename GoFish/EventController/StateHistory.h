@@ -18,7 +18,8 @@ namespace Events
 		StateInfo* latestChange()
 		{
 			if (!stateChanges.empty())
-				return stateChanges[stateChanges.size()];
+				return stateChanges.at(stateChanges.size());
+			return nullptr;
 		}
 
 	private:

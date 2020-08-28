@@ -6,11 +6,7 @@ using namespace Events;
 class EventController
 {
 public:
-	EventController() 
-	{
-		stateHistory = new StateHistory();
-	};
-
+	EventController() {};
 	~EventController() {};
 
 	void fireObservorUpdate(StateInfo* info);
@@ -22,5 +18,5 @@ private:
 
 	StateEvent* getEvent(const StateInfo* info);
 	StateEvent* addNewEvent(StateInfo* info);
-	StateHistory* stateHistory;
+	StateHistory stateHistory;
 };
