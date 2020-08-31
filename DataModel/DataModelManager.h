@@ -9,7 +9,7 @@ public:
 	~DataModelManager() {};
 
 	void setupDeck(MatchType matchType);
-	void dealDeck(int &numCards);
+	void dealDeck(int numCards);
 	bool deckHasCards();
 
 	Card* askForCard(Player* targetPlayer, Card* askingCard);

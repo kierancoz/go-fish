@@ -13,7 +13,7 @@ class ISubject
 public:
 	virtual ~ISubject() {};
 	virtual void Attach(IObservor* observor) = 0;
-	virtual void Detach(IObservor* ovservor) = 0;
+	virtual void Detach(IObservor* observor) = 0;
 	virtual void Notify() = 0;
 };
 

@@ -1,4 +1,4 @@
-# Install script for directory: /media/kieran/Ignore/app_installs/code/go-fish
+# Install script for directory: /home/kieran/Documents/code/go-fish
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kieran/Documents/code/go-fish/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

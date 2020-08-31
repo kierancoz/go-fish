@@ -8,46 +8,46 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug"/>
+				<Option working_dir="/home/kieran/Documents/code/go-fish/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug"/>
+				<Option working_dir="/home/kieran/Documents/code/go-fish/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug"/>
+				<Option working_dir="/home/kieran/Documents/code/go-fish/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="go_fish">
-				<Option output="/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/go_fish" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug"/>
+				<Option output="/home/kieran/go-fish-build/go_fish" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kieran/go-fish-build"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/DataModel"/>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/EventController"/>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/Interfaces"/>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/UI"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/DataModel"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/EventController"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/Interfaces"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/UI"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -58,23 +58,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 go_fish"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 go_fish"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="go_fish/fast">
-				<Option output="/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/go_fish" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug"/>
+				<Option output="/home/kieran/go-fish-build/go_fish" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kieran/go-fish-build"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/DataModel"/>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/EventController"/>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/Interfaces"/>
-					<Add directory="/media/kieran/Ignore/app_installs/code/go-fish/UI"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/DataModel"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/EventController"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/Interfaces"/>
+					<Add directory="/home/kieran/Documents/code/go-fish/UI"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -85,17 +85,35 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 go_fish/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 go_fish/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/kieran/Documents/code/go-fish/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/media/kieran/Ignore/app_installs/code/go-fish/main.cpp">
+		<Unit filename="/home/kieran/Documents/code/go-fish/DataModel/DataModelManager.cpp">
 			<Option target="go_fish"/>
 		</Unit>
-		<Unit filename="/media/kieran/Ignore/app_installs/code/go-fish/CMakeLists.txt">
+		<Unit filename="/home/kieran/Documents/code/go-fish/DataModel/DataModelManager.h">
+			<Option target="go_fish"/>
+		</Unit>
+		<Unit filename="/home/kieran/Documents/code/go-fish/EventController/EventController.cpp">
+			<Option target="go_fish"/>
+		</Unit>
+		<Unit filename="/home/kieran/Documents/code/go-fish/EventController/EventController.h">
+			<Option target="go_fish"/>
+		</Unit>
+		<Unit filename="/home/kieran/Documents/code/go-fish/UI/UIController.cpp">
+			<Option target="go_fish"/>
+		</Unit>
+		<Unit filename="/home/kieran/Documents/code/go-fish/UI/UIController.h">
+			<Option target="go_fish"/>
+		</Unit>
+		<Unit filename="/home/kieran/Documents/code/go-fish/main.cpp">
+			<Option target="go_fish"/>
+		</Unit>
+		<Unit filename="/home/kieran/Documents/code/go-fish/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -8,7 +8,7 @@ public:
 
 	// DataModel changes
 	virtual void setupDeck(MatchType matchType = MatchType::Standard) = 0;
-	virtual void dealDeck(int &numCards) = 0; // will check for sets
+	virtual void dealDeck(int numCards) = 0; // will check for sets
 	virtual bool deckHasCards() = 0;
 
 	//virtual void askForCard(int& playerIndex, int& cardIndex) = 0;

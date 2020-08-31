@@ -68,10 +68,10 @@ RM = /home/kieran/Documents/CLion/clion-2020.2.1/bin/cmake/linux/bin/cmake -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/kieran/Ignore/app_installs/code/go-fish
+CMAKE_SOURCE_DIR = /home/kieran/Documents/code/go-fish
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug
+CMAKE_BINARY_DIR = /home/kieran/Documents/code/go-fish/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/CMakeFiles /media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kieran/Documents/code/go-fish/cmake-build-debug/CMakeFiles /home/kieran/Documents/code/go-fish/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/kieran/Ignore/app_installs/code/go-fish/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kieran/Documents/code/go-fish/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -143,6 +143,87 @@ go_fish/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/build
 .PHONY : go_fish/fast
 
+DataModel/DataModelManager.o: DataModel/DataModelManager.cpp.o
+
+.PHONY : DataModel/DataModelManager.o
+
+# target to build an object file
+DataModel/DataModelManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/DataModel/DataModelManager.cpp.o
+.PHONY : DataModel/DataModelManager.cpp.o
+
+DataModel/DataModelManager.i: DataModel/DataModelManager.cpp.i
+
+.PHONY : DataModel/DataModelManager.i
+
+# target to preprocess a source file
+DataModel/DataModelManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/DataModel/DataModelManager.cpp.i
+.PHONY : DataModel/DataModelManager.cpp.i
+
+DataModel/DataModelManager.s: DataModel/DataModelManager.cpp.s
+
+.PHONY : DataModel/DataModelManager.s
+
+# target to generate assembly for a file
+DataModel/DataModelManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/DataModel/DataModelManager.cpp.s
+.PHONY : DataModel/DataModelManager.cpp.s
+
+EventController/EventController.o: EventController/EventController.cpp.o
+
+.PHONY : EventController/EventController.o
+
+# target to build an object file
+EventController/EventController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/EventController/EventController.cpp.o
+.PHONY : EventController/EventController.cpp.o
+
+EventController/EventController.i: EventController/EventController.cpp.i
+
+.PHONY : EventController/EventController.i
+
+# target to preprocess a source file
+EventController/EventController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/EventController/EventController.cpp.i
+.PHONY : EventController/EventController.cpp.i
+
+EventController/EventController.s: EventController/EventController.cpp.s
+
+.PHONY : EventController/EventController.s
+
+# target to generate assembly for a file
+EventController/EventController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/EventController/EventController.cpp.s
+.PHONY : EventController/EventController.cpp.s
+
+UI/UIController.o: UI/UIController.cpp.o
+
+.PHONY : UI/UIController.o
+
+# target to build an object file
+UI/UIController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/UI/UIController.cpp.o
+.PHONY : UI/UIController.cpp.o
+
+UI/UIController.i: UI/UIController.cpp.i
+
+.PHONY : UI/UIController.i
+
+# target to preprocess a source file
+UI/UIController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/UI/UIController.cpp.i
+.PHONY : UI/UIController.cpp.i
+
+UI/UIController.s: UI/UIController.cpp.s
+
+.PHONY : UI/UIController.s
+
+# target to generate assembly for a file
+UI/UIController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_fish.dir/build.make CMakeFiles/go_fish.dir/UI/UIController.cpp.s
+.PHONY : UI/UIController.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +260,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... go_fish"
+	@echo "... DataModel/DataModelManager.o"
+	@echo "... DataModel/DataModelManager.i"
+	@echo "... DataModel/DataModelManager.s"
+	@echo "... EventController/EventController.o"
+	@echo "... EventController/EventController.i"
+	@echo "... EventController/EventController.s"
+	@echo "... UI/UIController.o"
+	@echo "... UI/UIController.i"
+	@echo "... UI/UIController.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

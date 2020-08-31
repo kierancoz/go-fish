@@ -19,6 +19,9 @@ int main()
     // UI Depends on Events fired from DataModelManager
     UIController* uiController = new UIController(eventController);
 
+    // Create desk
+    dataModelManager->dealDeck(5);
+
     std::cout << "Goodbye World!\n";
 }
 

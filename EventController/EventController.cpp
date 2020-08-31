@@ -1,4 +1,5 @@
 #include "EventController.h"
+#include <algorithm>
 
 // Public
 void EventController::fireObservorUpdate(StateInfo *info)

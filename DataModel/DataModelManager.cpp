@@ -1,4 +1,4 @@
-
+#include <algorithm>
 #include "DataModelManager.h"
 
 DataModelManager::DataModelManager(EventController *controller, MatchType matchType)
@@ -22,7 +22,7 @@ void DataModelManager::setupDeck(MatchType matchType)
 	eventController->fireObservorUpdate(new StateInfo(DMPropertyType::Deck));
 }
 
-void DataModelManager::dealDeck(int &numCards)
+void DataModelManager::dealDeck(int numCards)
 {
 	for (const auto player : *dataModel->players)
 	{
