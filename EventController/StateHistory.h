@@ -1,29 +1,28 @@
 #pragma once
 #include <vector>
-#include "StateEvent.h"
+#include "StateInfo.h"
+#include "IStateHistory.h"
 
 namespace Events
 {
-	class StateHistory
-	{
+	class StateHistory : public IStateHistory {
 	public:
-		StateHistory() {};
-		~StateHistory() {};
+		StateHistory() = default;
+		~StateHistory() = default;
 
-		void addChange(StateInfo* changeInfo)
-		{
-			stateChanges.push_back(changeInfo);
-		}
+		void addChange(StateInfo* changeInfo) {
+            stateChanges.push_back(changeInfo);
+        }
 
-		StateInfo* latestChange()
-		{
-			if (!stateChanges.empty())
-				return stateChanges.at(stateChanges.size());
-			return nullptr;
-		}
+		StateInfo* operator[](const int &index) override {
+		    return stateChanges[index];
+        }
+
+		int size() override {
+		    return stateChanges.size();
+        }
 
 	private:
 		std::vector<StateInfo*> stateChanges;
 	};
-
 }

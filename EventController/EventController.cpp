@@ -1,41 +1,34 @@
 #include "EventController.h"
-#include <algorithm>
 
-// Public
-void EventController::fireObservorUpdate(StateInfo *info)
-{
+// Public methods
+void EventController::fireObserverUpdate(StateInfo *info) {
 	StateEvent* event = getEvent(info);
-	if (event == nullptr)
-		event = addNewEvent(info);
-
 	event->Notify();
-	stateHistory.addChange(info);
+    stateHistory->addChange(info);
 }
 
-void EventController::addObservorToStateInfo(StateInfo* info, IObservor* observor)
-{
+void EventController::addObserverToStateInfo(StateInfo* info, IObserver* observer) {
 	StateEvent* event = getEvent(info);
-	if (event == nullptr)
-		event = addNewEvent(info);
-
-	event->Attach(observor);
+	event->Attach(observer);
 }
 
-// Private
-StateEvent* EventController::getEvent(const StateInfo* info)
-{
-	auto event = std::find_if(subjects.begin(), subjects.end(), [&info](const StateEvent* f)->bool
-		{ return (*f->optionalListIndex == *info->optionalListIndex && *f->propertyType == *info->propertyType); });
+// Private methods
+StateEvent* EventController::getEvent(StateInfo* info) {
+	auto event = std::find_if(subjects.begin(), subjects.end(), [info](const StateEvent &f)->bool
+		{ return (*f.optionalListIndex == *info->optionalListIndex && *f.propertyType == *info->propertyType); });
 
+	// if the event doesn't exist, create it
 	if (event == subjects.end())
-		return nullptr;
+		return addNewEvent(info);
 
-	return *event;
+	return &*event;
 }
 
-StateEvent* EventController::addNewEvent(StateInfo* info)
-{
-	StateEvent* event = new StateEvent(info);
-	subjects.push_back(event);
-	return event;
+StateEvent* EventController::addNewEvent(StateInfo* info) {
+	subjects.push_back((StateEvent)*info);
+	return &subjects.back();
+}
+
+IStateHistory* EventController::getStateHistory() {
+    return stateHistory;
 }

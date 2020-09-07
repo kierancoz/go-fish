@@ -3,16 +3,14 @@
 #include "Card.h"
 #include "Set.h"
 
-class Player
-{
+class Player {
 public:
-	Player(std::vector<Set*> *startingHand = new std::vector<Set*>())
-	{
-		hand = startingHand;
-		sets = new std::vector<Set*>();
+	explicit Player(std::vector<Set*> *startingHand = nullptr) {
+	    if (startingHand != nullptr)
+		    hand = *startingHand;
 	}
-	~Player() {};
+	~Player() = default;
 
-	std::vector<Set*>* hand;
-	std::vector<Set*>* sets;
+	std::vector<Set*> hand;
+	std::vector<Set*> sets;
 };

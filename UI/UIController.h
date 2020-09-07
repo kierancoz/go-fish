@@ -1,15 +1,14 @@
 #pragma once
-#include "EventController.h"
+#include "IEvents.h"
 #include "FeatureFactory.h"
 
-class UIController
-{
+class UIController {
 public:
-	UIController(EventController *controller);
-	~UIController() {};
+	explicit UIController(IEvents *controller);
+	~UIController() = default;
 
 private:
-	std::vector<IFeature*> *features;
-	EventController* eventController;
+	std::vector<IUIFeature*> *features;
+	IEvents* eventController;
 	void subscribeToEvents();
 };

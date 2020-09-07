@@ -1,20 +1,17 @@
 #pragma once
+#include <vector>
 #include "Card.h"
+#include "IActions.h"
 
-enum class MatchType { Standard = 2, FullMatch = 4 };
-
-class Set
-{
+class Set {
 public:
-	Set(const MatchType *type, std::vector<Card*>* inCards = new std::vector<Card*>())
-	{
+	explicit Set(const MatchType *type, std::vector<Card*>* inCards = new std::vector<Card*>()) {
 		gameType = type;
 		cards = inCards;
 	};
-	~Set() {};
+	~Set() = default;
 
-	bool complete()
-	{
+	[[nodiscard]] bool complete() const {
 		int size = cards->size();
 		switch (*gameType)
 		{
@@ -23,14 +20,14 @@ public:
 		case MatchType::Standard:
 			return size > 1;
 		}
+		return false;
 	}
 
-	std::vector<Set*>* children()
-	{
+	std::vector<Set*>* children() {
 		if (!complete())
 			return nullptr;
 
-		std::vector<Set*>* returnSet = new std::vector<Set*>();
+		auto* returnSet = new std::vector<Set*>();
 
 		switch (*gameType)
 		{
@@ -54,11 +51,10 @@ public:
 		return returnSet;
 	}
 
-	const CardValue::Type* value()
-	{
+	[[nodiscard]] const CardValue::Type* value() const {
 		return cards->at(0)->value;
 	}
 
 	const MatchType *gameType;
-	std::vector<Card*> *cards;
+	std::vector<Card*> *cards{};
 };

@@ -2,23 +2,18 @@
 #include <vector>
 #include "Player.h"
 #include "Card.h"
+#include "GameState.h"
 
-enum class GameState { state1 = 1, state2 = 2, state3 = 3 }; // to complete
-
-class DataModel
-{
+class DataModel {
 public:
-	DataModel(MatchType matchType = MatchType::Standard)
-	{
+	explicit DataModel(MatchType matchType = MatchType::Standard) {
 		state = GameState::state1;
 		gameType = &matchType;
-		players = new std::vector<Player*>();
-		deck = new std::vector<Card*>();
 	}
-	~DataModel() {};
+	~DataModel() = default;
 
-	std::vector<Player*>* players;
-	std::vector<Card*>* deck;
+	std::vector<Player*> players;
+	std::vector<Card*> deck;
 	const MatchType *gameType;
 	GameState state;
 };

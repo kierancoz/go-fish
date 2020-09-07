@@ -1,30 +1,31 @@
-#include <algorithm>
 #include "DataModelManager.h"
 
-DataModelManager::DataModelManager(EventController *controller, MatchType matchType)
-{
+DataModelManager::DataModelManager(IEvents *controller, MatchType matchType) {
 	dataModel = new DataModel(matchType);
 	eventController = controller;
 }
 
-void DataModelManager::setupDeck(MatchType matchType)
-{
+// Public members
+void DataModelManager::setupDeck() {
+    setupDeck(MatchType::Standard);
+}
+
+void DataModelManager::setupDeck(MatchType matchType) {
 	dataModel->gameType = &matchType;
-	eventController->fireObservorUpdate(new StateInfo(DMPropertyType::DeckType));
+    eventController->fireObserverUpdate(new StateInfo(DMPropertyType::DeckType));
 
 	for (const auto inSuite : Suite::All)
 	{
 		for (const auto inVal : CardValue::All)
 		{
-			dataModel->deck->push_back(new Card(inSuite, inVal));
+			dataModel->deck.push_back(new Card(inSuite, inVal));
 		};
 	};
-	eventController->fireObservorUpdate(new StateInfo(DMPropertyType::Deck));
+    eventController->fireObserverUpdate(new StateInfo(DMPropertyType::Deck));
 }
 
-void DataModelManager::dealDeck(int numCards)
-{
-	for (const auto player : *dataModel->players)
+void DataModelManager::dealDeck(int numCards) {
+	for (const auto player : dataModel->players)
 	{
 		for (int i = 0; i < numCards; i++) {
 			Card* fishedCard = getCardFromDeck();
@@ -35,28 +36,43 @@ void DataModelManager::dealDeck(int numCards)
 				moveSetFromHand(player, set);
 		}
 	}
-	eventController->fireObservorUpdate(new StateInfo(DMPropertyType::Player));
-	eventController->fireObservorUpdate(new StateInfo(DMPropertyType::Deck));
+    eventController->fireObserverUpdate(new StateInfo(DMPropertyType::Player));
+    eventController->fireObserverUpdate(new StateInfo(DMPropertyType::Deck));
 }
 
-void DataModelManager::moveSetFromHand(Player *player, Set* set)
-{
+bool DataModelManager::deckHasCards() {
+    return !dataModel->deck.empty();
+}
+
+bool DataModelManager::askForCard(int &askingPlayerIndex, int &askedPlayerIndex) {
+    return askForCard(askedPlayerIndex, askedPlayerIndex, 0);
+}
+
+bool DataModelManager::askForCard(int& askingPlayerIndex, int& askedPlayerIndex, int askingCardIndex) {
+    return false;
+}
+
+IStateHistory* DataModelManager::getGameHistory() {
+    return eventController->getStateHistory();
+}
+
+// Private members
+void DataModelManager::moveSetFromHand(Player *player, Set* set) {
 	// get children sets and add to sets vector
-	for (auto set : *set->children())
+	for (auto childSet : *set->children())
 	{
-		player->sets->push_back(set);
+		player->sets.push_back(childSet);
 	}
 
 	// erase past set
-	auto it = std::find(player->sets->begin(), player->sets->end(), set);
-	player->sets->erase(it);
+	auto it = std::find(player->sets.begin(), player->sets.end(), set);
+	player->sets.erase(it);
 }
 
-Set* DataModelManager::getPlayerSetForCard(Player* player, Card* searchCard)
-{
-	for (auto iter = player->hand->begin(); iter < player->hand->end(); iter++)
+Set* DataModelManager::getPlayerSetForCard(Player* player, Card* searchCard) {
+	for (auto iter = player->hand.begin(); iter < player->hand.end(); iter++)
 	{
-		Set* set = player->hand->at(iter - player->hand->begin());
+		Set* set = player->hand[iter - player->hand.begin()];
 
 		if (*set->value() == *searchCard->value)
 		{
@@ -66,37 +82,24 @@ Set* DataModelManager::getPlayerSetForCard(Player* player, Card* searchCard)
 	}
 	std::vector<Card*> inVector = { searchCard };
 	auto newSet = new Set(dataModel->gameType, &inVector);
-	player->hand->push_back(newSet);
+	player->hand.push_back(newSet);
 	return newSet;
 }
 
-bool DataModelManager::deckHasCards()
-{
-	return true;
-}
-
-Card* DataModelManager::askForCard(Player* targetPlayer, Card* askingCard)
-{
-	return NULL;
-}
-
-void DataModelManager::giveCard(Player* player, Card* givingCard)
-{
+void DataModelManager::giveCard(Player* player, Card* givingCard) {
 
 }
 
-Card* DataModelManager::goFish()
-{
+Card* DataModelManager::goFish() {
 	Card* fishedCard = getCardFromDeck();
-	eventController->fireObservorUpdate(new StateInfo(DMPropertyType::Deck));
+    eventController->fireObserverUpdate(new StateInfo(DMPropertyType::Deck));
 	return fishedCard;
 }
 
-Card* DataModelManager::getCardFromDeck()
-{
-	int index = rand() % dataModel->deck->size();
-	Card* returnCard = dataModel->deck->at(index);
-	dataModel->deck->erase(dataModel->deck->begin() + index);
-	eventController->fireObservorUpdate(new StateInfo(DMPropertyType::Deck));
+Card* DataModelManager::getCardFromDeck() {
+	int index = rand() % dataModel->deck.size();
+	Card* returnCard = dataModel->deck[index];
+	dataModel->deck.erase(dataModel->deck.begin() + index);
+    eventController->fireObserverUpdate(new StateInfo(DMPropertyType::Deck));
 	return returnCard;
 }
