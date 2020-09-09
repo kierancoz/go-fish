@@ -24,7 +24,8 @@ void DataModelManager::setupDeck(MatchType matchType) {
     eventController->fireObserverUpdate(new StateInfo(DMPropertyType::Deck));
 }
 
-void DataModelManager::dealDeck(int numCards) {
+void DataModelManager::dealDeck(int numCards, int numPlayers) {
+    setupPlayers(numPlayers);
 	for (const auto player : dataModel->players)
 	{
 		for (int i = 0; i < numCards; i++) {
@@ -57,6 +58,14 @@ IStateHistory* DataModelManager::getGameHistory() {
 }
 
 // Private members
+void DataModelManager::setupPlayers(int numPlayers) {
+    for (int i = 0; i < numPlayers; i++)
+    {
+        dataModel->players.push_back(new Player());
+        eventController->fireObserverUpdate(new StateInfo(DMPropertyType::Player, i));
+    }
+}
+
 void DataModelManager::moveSetFromHand(Player *player, Set* set) {
 	// get children sets and add to sets vector
 	for (auto childSet : *set->children())

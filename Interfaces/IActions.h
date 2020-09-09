@@ -9,7 +9,7 @@ public:
 	// DataModel changes
     virtual void setupDeck() = 0;
 	virtual void setupDeck(MatchType matchType) = 0;
-	virtual void dealDeck(int numCards) = 0;
+	virtual void dealDeck(int numCards, int numPlayers) = 0;
 	virtual bool deckHasCards() = 0;
     virtual bool askForCard(int& askingPlayerIndex, int& askedPlayerIndex) = 0;
 	virtual bool askForCard(int& askingPlayerIndex, int& askedPlayerIndex, int askingCardIndex) = 0;

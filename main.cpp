@@ -21,10 +21,11 @@ int main()
 
     // Create desk
     dataModelManager->setupDeck();
-    dataModelManager->dealDeck(5);
+    dataModelManager->dealDeck(5,4);
 
     // Testing ~~ Checking Game History Size
     std::cout << dataModelManager->getGameHistory()->size() << std::endl;
+    //std::cout << dataModelManager<< std::endl;
 
     std::cout << "Goodbye World!" << std::endl;
 }

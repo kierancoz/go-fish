@@ -11,7 +11,7 @@ public:
 
 	void setupDeck() override;
     void setupDeck(MatchType matchType) override;
-    void dealDeck(int numCards) override;
+    void dealDeck(int numCards, int numPlayers) override;
     bool deckHasCards() override;
     bool askForCard(int& askingPlayerIndex, int& askedPlayerIndex) override;
     bool askForCard(int& askingPlayerIndex, int& askedPlayerIndex, int askingCardIndex) override;
@@ -22,6 +22,7 @@ private:
 	IEvents* eventController;
 	Card* getCardFromDeck();
 	Set* getPlayerSetForCard(Player* player, Card* searchCard);
+	void setupPlayers(int numPlayers);
 	static void moveSetFromHand(Player* player, Set* set);
 
 	// might get rid of
