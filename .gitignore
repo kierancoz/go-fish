@@ -1,5 +1,7 @@
 .vs/
-bin/
-build/
-cmake-build-debug/
 .idea/
+build/Debug/*
+build/Release/*
+bin/Debug/*
+bin/Release/*
+!.gitignore
