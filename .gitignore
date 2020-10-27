@@ -2,4 +2,6 @@
 .idea/
 build/Debug/*
 build/Release/*
+bin/Debug/*
+bin/Release/*
 !.gitignore

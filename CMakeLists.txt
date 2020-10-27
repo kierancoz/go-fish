@@ -3,11 +3,12 @@ project(go_fish)
 
 set(CMAKE_CXX_STANDARD 20)
 
-if (WIN32)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY Z:/app_installs/temp/GoFish)
-elseif(UNIX)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY /home/kieran/Documents)
-endif()
+#if (WIN32)
+#    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY Z:/app_installs/temp/GoFish)
+#elseif(UNIX)
+#    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY /home/kieran/Documents)
+#endif()
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${go_fish_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
 
 add_subdirectory(src)
 add_subdirectory(test)
