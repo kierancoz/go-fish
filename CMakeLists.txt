@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.10)
 project(go_fish)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -9,7 +9,7 @@ elseif(UNIX)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY /home/kieran/Documents)
 endif()
 
-include_directories(DataModel EventController Interfaces UI Enums)
-set(SOURCE_FILES main.cpp UI/UIController.cpp EventController/EventController.cpp DataModel/DataModelManager.cpp Interfaces/StateInfo.h Interfaces/IStateHistory.h)
-
-add_executable(go_fish ${SOURCE_FILES})
+add_subdirectory(src)
+add_subdirectory(test)
+enable_testing()
+add_test(NAME MyTest COMMAND test)
