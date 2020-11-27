@@ -1,34 +1,41 @@
+.PHONY: clean demo test test_all debug build setup_build
 
-setup_build:
-	mkdir -p bin
-	mkdir -p bin/Release
-	mkdir -p bin/Debug
-	mkdir -p build
-	mkdir -p build/Release
-	mkdir -p build/Debug
-.PHONY : setup_build
+target = Release
+info-file = "./build/.build-info"
+exec = make setup_build && cd build && cmake -DCMAKE_BUILD_TYPE=$(target) ../; make
+
+ifeq ($(shell uname -p), unknown) # windows
+    PYTHON := python
+    OS = windows
+else # linux
+    PYTHON := python3
+	OS = linux
+endif
 
 build:
-	make setup_build
-	cd build/Release; cmake -DCMAKE_BUILD_TYPE=Release ../../; make
-.PHONY : build
+	$(exec)
 
-build_debug:
-	make setup_build
-	cd build/Debug; cmake -DCMAKE_BUILD_TYPE=Debug ../../; make
-.PHONY : build_debug
+debug:
+	$(eval target=RelWithDebInfo) # target=Debug
+	$(exec)
+
+setup_build:
+	if test -f $(info-file) && ! grep -q $(OS) $(info-file); then make clean ; fi
+	mkdir -p bin
+	mkdir -p build
+	if ! test -f $(info-file); then touch $(info-file) && echo $(OS) > $(info-file); fi
+	cd build
 
 test:
-	./bin/Release/UnitTests --logger=HRF,all --color_output=true --report_format=HRF --show_progress=no
-.PHONY : test
+	./bin/UnitTests --logger=HRF,all --color_output=true --report_format=HRF --show_progress=no
 
 # if future test suites are added, they can all be tested with this command
-test_all:
-	cd build/Release; make test
-.PHONY : test_all
+test_a:
+	cd build; make test
 
 demo:
-	./bin/Release/go_fish_demo
-.PHONY : demo
+	./bin/go_fish_demo
 
-# clean: to implement
+clean:
+	rm -r -f bin/
+	rm -r -f build/

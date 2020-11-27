@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 20)
 #    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY /home/kieran/Documents)
 #endif()
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${go_fish_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${go_fish_SOURCE_DIR}/bin) # /${CMAKE_BUILD_TYPE})
 
 add_subdirectory(src)
 # Setup unit tests
